@@ -157,6 +157,8 @@ namespace Microsoft.Toolkit.Uwp.UI.Lottie.UIData.Tools
             }
         }
 
+        public int AnimationControllerListCount { get; }
+
         public int AnimationControllerCount { get; }
 
         public int AnimatorCount { get; }

@@ -86,6 +86,9 @@ namespace Microsoft.Toolkit.Uwp.UI.Lottie.LottieToWinComp
                 case nameof(PathKeyFrameAnimation):
                     return 11;
 
+                case nameof(AnimationController):
+                    return 14;
+
                 default:
                     throw new InvalidOperationException();
             }
@@ -302,6 +305,12 @@ namespace Microsoft.Toolkit.Uwp.UI.Lottie.LottieToWinComp
                 $"UAP version {uapVersion} features are not available.");
 
             HighestUapVersionUsed = Math.Max(HighestUapVersionUsed, uapVersion);
+        }
+
+        internal AnimationController CreateAnimationControllerList()
+        {
+            ConsumeVersionFeature(GetUapVersionForApi(nameof(AnimationController)));
+            return _compositor.CreateAnimationController();
         }
     }
 }

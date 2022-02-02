@@ -5,6 +5,7 @@
 #nullable enable
 
 using System;
+using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Microsoft.UI.Xaml.Controls;
@@ -190,7 +191,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Lottie
                 // No content has been loaded yet.
                 // Return an IAnimatedVisual that produces nothing.
                 diagnostics = null;
-                return new DisposableAnimatedVisual(null);
+                return new DisposableAnimatedVisual(null, Enumerable.Empty<AnimationController>());
             }
             else
             {
